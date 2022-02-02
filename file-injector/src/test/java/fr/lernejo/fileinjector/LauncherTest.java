@@ -20,4 +20,14 @@ class LauncherTest {
     void inject_json() throws IOException {
         Launcher.main(new String[]{"src/test/resources/games.json"});
     }
+
+    @Test
+    void inject_wrong_json() throws IOException {
+        Launcher.main(new String[]{"src/test/resources/fake.json"});
+    }
+
+    @Test
+    void inject_no_json() throws IOException {
+        Launcher.main(new String[]{});
+    }
 }
